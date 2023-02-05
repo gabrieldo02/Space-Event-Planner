@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Space Event Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+  <style>
+    #calendar {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Space Event Planner</h1>
+  <div id='calendar'></div>
+  <script>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        defaultDate: new Date(),
+        navLinks: true,
+        editable: true,
+        eventLimit: true,
+        events: [
+          {
+            title: 'NASA Mission to Mars',
+            start: '2023-06-01'
+          },
+          {
+            title: 'Astronomy Night',
+            start: '2023-07-15',
+            end: '2023-07-16'
+          },
+          {
+            title: 'Eclipse Viewing Party',
+            start: '2023-08-01T09:00:00'
+          },
+          {
+            title: 'SpaceX Launch',
+            start: '2023-09-15T10:30:00',
+            end: '2023-09-15T12:30:00'
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
